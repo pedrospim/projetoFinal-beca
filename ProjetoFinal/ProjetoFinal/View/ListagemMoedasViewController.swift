@@ -8,22 +8,15 @@
 import UIKit
 
 class ListagemMoedasViewController: UIViewController {
-    
-    init(){
+    init() { 
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
     }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .purple
     }
-
-
 }
-
