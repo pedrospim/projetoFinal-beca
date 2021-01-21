@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AC214CA25B9FBBA00EAC6D7 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC214C925B9FBBA00EAC6D7 /* CoinModel.swift */; };
 		A223F0E525B9BDCA00BD0A10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223F0E425B9BDCA00BD0A10 /* AppDelegate.swift */; };
 		A223F0E925B9BDCA00BD0A10 /* ListagemMoedasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223F0E825B9BDCA00BD0A10 /* ListagemMoedasViewController.swift */; };
 		A223F0EE25B9BDCD00BD0A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A223F0ED25B9BDCD00BD0A10 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AC214C925B9FBBA00EAC6D7 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		A223F0E125B9BDCA00BD0A10 /* ProjetoFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A223F0E425B9BDCA00BD0A10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A223F0E825B9BDCA00BD0A10 /* ListagemMoedasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListagemMoedasViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AC214C725B9FB9200EAC6D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AC214C925B9FBBA00EAC6D7 /* CoinModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AC214C825B9FB9800EAC6D7 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
 		A223F0D825B9BDCA00BD0A10 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +112,8 @@
 		A223F0E325B9BDCA00BD0A10 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
-				A223F13B25B9F6AB00BD0A10 /* Model */,
-				A223F13C25B9F6BB00BD0A10 /* ViewModel */,
+				3AC214C825B9FB9800EAC6D7 /* Viewmodel */,
+				3AC214C725B9FB9200EAC6D7 /* Model */,
 				A223F13A25B9F69D00BD0A10 /* View */,
 				A223F12D25B9EB0B00BD0A10 /* Application */,
 				A223F0ED25B9BDCD00BD0A10 /* Assets.xcassets */,
@@ -138,20 +155,6 @@
 				A223F0E825B9BDCA00BD0A10 /* ListagemMoedasViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A223F13B25B9F6AB00BD0A10 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A223F13C25B9F6BB00BD0A10 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A223F0E925B9BDCA00BD0A10 /* ListagemMoedasViewController.swift in Sources */,
+				3AC214CA25B9FBBA00EAC6D7 /* CoinModel.swift in Sources */,
 				A223F0E525B9BDCA00BD0A10 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
