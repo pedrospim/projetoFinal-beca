@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListagemMoedasViewController: UIViewController {
     
     init(){
         super.init(nibName: nil, bundle: nil)
