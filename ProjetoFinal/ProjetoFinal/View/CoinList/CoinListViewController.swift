@@ -29,7 +29,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource {
     }
     func bind() {
         viewModel.viewData.bind { (response) in
-            guard let `response` = response else { return }
+           // guard let `response` = response else { return }
             self.coinList  = response
             self.coinTableView.reloadData()
         }
