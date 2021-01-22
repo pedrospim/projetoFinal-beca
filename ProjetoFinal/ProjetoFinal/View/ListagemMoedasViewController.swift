@@ -8,15 +8,24 @@
 import UIKit
 
 class ListagemMoedasViewController: UIViewController {
-    init() { 
+    let client = MoedaAPI()
+    var listaMoedas:CoinModel = []
+
+    init() {
+
         super.init(nibName: nil, bundle: nil)
+        self.listaMoedas = []
     }
+
     required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        client.coinInfo { (response) in
+            self.listaMoedas = response
+            print(self.listaMoedas)
+        }
         view.backgroundColor = .purple
     }
 }

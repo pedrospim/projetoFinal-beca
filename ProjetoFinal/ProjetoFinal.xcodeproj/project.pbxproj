@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3AC214CA25B9FBBA00EAC6D7 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC214C925B9FBBA00EAC6D7 /* CoinModel.swift */; };
+		3AC2155325BB107F00EAC6D7 /* MoedaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2155225BB107F00EAC6D7 /* MoedaAPI.swift */; };
 		4E7D43F8059279600F952855 /* Pods_ProjetoFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4464DCD015CFB4450B916614 /* Pods_ProjetoFinalTests.framework */; };
 		A223F0E525B9BDCA00BD0A10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223F0E425B9BDCA00BD0A10 /* AppDelegate.swift */; };
 		A223F0E925B9BDCA00BD0A10 /* ListagemMoedasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A223F0E825B9BDCA00BD0A10 /* ListagemMoedasViewController.swift */; };
@@ -40,6 +41,7 @@
 		1740D1DFB5B9495C9F37146D /* Pods-ProjetoFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFinalTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjetoFinalTests/Pods-ProjetoFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2C200D2A543F77D65A2D1A17 /* Pods-ProjetoFinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFinalTests.release.xcconfig"; path = "Target Support Files/Pods-ProjetoFinalTests/Pods-ProjetoFinalTests.release.xcconfig"; sourceTree = "<group>"; };
 		3AC214C925B9FBBA00EAC6D7 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		3AC2155225BB107F00EAC6D7 /* MoedaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoedaAPI.swift; path = ProjetoFinal/Model/MoedaAPI.swift; sourceTree = SOURCE_ROOT; };
 		4464DCD015CFB4450B916614 /* Pods_ProjetoFinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoFinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		701ABC8121CEAD42541461FE /* Pods-ProjetoFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFinal.release.xcconfig"; path = "Target Support Files/Pods-ProjetoFinal/Pods-ProjetoFinal.release.xcconfig"; sourceTree = "<group>"; };
 		841243DF7D39B3AFAF562709 /* Pods-ProjetoFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFinal.debug.xcconfig"; path = "Target Support Files/Pods-ProjetoFinal/Pods-ProjetoFinal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +101,6 @@
 				1740D1DFB5B9495C9F37146D /* Pods-ProjetoFinalTests.debug.xcconfig */,
 				2C200D2A543F77D65A2D1A17 /* Pods-ProjetoFinalTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -111,11 +112,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3AC214C825B9FB9800EAC6D7 /* Viewmodel */ = {
+		3AC2153B25BB0C4800EAC6D7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				3AC2155225BB107F00EAC6D7 /* MoedaAPI.swift */,
 			);
-			path = Viewmodel;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		8CEA55274220941E33D39401 /* Frameworks */ = {
@@ -153,7 +155,7 @@
 		A223F0E325B9BDCA00BD0A10 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
-				3AC214C825B9FB9800EAC6D7 /* Viewmodel */,
+				3AC2153B25BB0C4800EAC6D7 /* Service */,
 				3AC214C725B9FB9200EAC6D7 /* Model */,
 				A223F13A25B9F69D00BD0A10 /* View */,
 				A223F12D25B9EB0B00BD0A10 /* Application */,
@@ -454,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A223F0E925B9BDCA00BD0A10 /* ListagemMoedasViewController.swift in Sources */,
+				3AC2155325BB107F00EAC6D7 /* MoedaAPI.swift in Sources */,
 				3AC214CA25B9FBBA00EAC6D7 /* CoinModel.swift in Sources */,
 				A223F0E525B9BDCA00BD0A10 /* AppDelegate.swift in Sources */,
 			);
