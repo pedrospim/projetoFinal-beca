@@ -22,12 +22,15 @@ class CoinViewData : NSObject {
 
 extension CoinViewData : CoinViewDataType {
     var name: String {
-        return model.name
+        guard let name = model.name else { return ""}
+        return name
     }
     var shortname: String {
-        return model.assetID
+        guard let shortname = model.assetID else { return ""}
+        return shortname
     }
     var price: String {
-        return String(describing: model.priceUsd) 
+        guard let preco = model.priceUsd else { return ""}
+        return String(describing: preco)
     }
 }

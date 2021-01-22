@@ -9,12 +9,13 @@ import Foundation
 
 // MARK: - CoinModelElement
 struct CoinModelElement: Codable {
-    let assetID, name: String
-    let typeIsCrypto: Int
-    let dataStart, dataEnd, dataQuoteStart, dataQuoteEnd: String
-    let dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd: String
-    let dataSymbolsCount: Int
-    let volume1HrsUsd, volume1DayUsd, volume1MthUsd: Double
+    let assetID, name: String?
+    let typeIsCrypto: Int?
+    let dataStart, dataEnd, dataQuoteStart, dataQuoteEnd: String?
+    let dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd: String?
+    let dataSymbolsCount: Int?
+    let volume1HrsUsd, volume1DayUsd: Double?
+    let volume1MthUsd: Int?
     let priceUsd: Double?
     let idIcon: String?
 

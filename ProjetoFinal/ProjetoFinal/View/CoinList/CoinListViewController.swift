@@ -40,15 +40,21 @@ class CoinListViewController: UIViewController, UITableViewDataSource {
     }
     // MARK: - TableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coinList.count
+        if coinList.count > 0 {
+            return 20
+        }else{
+            return 0
+        }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         guard let celula = tableView.dequeueReusableCell(withIdentifier: "coinCell") as? CoinTableViewCell else {
             fatalError("The dequeued cell is not an instance of celulaMoeda.")
         }
-        celula.viewModel = CoinTableViewCellModel(coin: coinList[indexPath.row])
+        celula.viewModel = CoinTableViewCellModel()
         celula.bind()
+        celula.viewModel?.loadInfo(coin: coinList[indexPath.row])
         return celula
     }
 }

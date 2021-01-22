@@ -25,7 +25,8 @@ class CoinListViewModel {
         }
     }
     func coinInfo(completion: @escaping (CoinModel) -> Void) {
-                Alamofire.request("https://d15da3a1-1ea2-4c67-9fe3-94e08f88eed2.mock.pstmn.io/BTC_get", method: .get).responseJSON { (resposta) in
+        let headers = ["X-CoinAPI-Key":"04D7059E-2345-4BDA-B196-DED63361DC49"]
+        Alamofire.request("https://rest.coinapi.io/v1/assets", method: .get, headers: headers).responseJSON { (resposta) in
                     switch resposta.result {
                     case .success:
 
