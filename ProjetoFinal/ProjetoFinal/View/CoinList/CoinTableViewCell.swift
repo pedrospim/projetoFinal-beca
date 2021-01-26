@@ -22,17 +22,21 @@ class CoinTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    func setup(coin:CoinViewData){
+    func setup(coin:CoinViewData) {
         bind()
         viewModel.loadInfo(coin: coin)
         config()
     }
-    func bind(){
+    func bind() {
         viewModel.viewData.bind({ (response) in
             guard let `response` = response else { return }
-            self.nameCoinLabel.text = response.name
             self.shortnameCoinLabel.text = response.shortname
             self.priceLabel.text = response.price
+            if response.isFav {
+                self.nameCoinLabel.text = response.name + " ★"
+            } else {
+                self.nameCoinLabel.text = response.name
+            }
         })
     }
     func config() {

@@ -8,9 +8,10 @@
 import Foundation
 
 protocol CoinViewDataType {
-    var name: String { get }
+    var name: String { get}
     var shortname: String { get }
     var price: String { get }
+    var isFav: Bool { get }
 }
 
 class CoinViewData : NSObject {
@@ -22,8 +23,8 @@ class CoinViewData : NSObject {
 
 extension CoinViewData : CoinViewDataType {
     var name: String {
-        guard let name = model.name else { return ""}
-        return name
+            guard let name = model.name else { return ""}
+            return name
     }
     var shortname: String {
         guard let shortname = model.assetID else { return ""}
@@ -32,5 +33,12 @@ extension CoinViewData : CoinViewDataType {
     var price: String {
         guard let preco = model.priceUsd else { return ""}
         return String(describing: preco)
+    }
+    var isFav: Bool {
+        guard let favorites = UserDefaults.standard.array(forKey: "favorites") as? [String] else { return false}
+        if favorites.contains(shortname) {
+            return true
+        }
+        return false
     }
 }

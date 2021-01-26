@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoinListViewController: UIViewController, UITableViewDataSource {
+class CoinListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Outlets
     @IBOutlet weak var coinTableView: UITableView!
     // MARK: - Variables
@@ -23,6 +23,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         coinTableView.dataSource = self
+        coinTableView.delegate = self
         bind()
     }
     func bind() {
@@ -45,5 +46,17 @@ class CoinListViewController: UIViewController, UITableViewDataSource {
         }
         celula.setup(coin: viewModel.viewData.value[indexPath.row])
         return celula
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let shortname = viewModel.viewData.value[indexPath.row].shortname
+        guard var favorites = UserDefaults.standard.array(forKey: "favorites") as? [String] else { return }
+        if favorites.contains(shortname) {
+            favorites.removeAll { $0 == shortname }
+        }else{
+            favorites.append(shortname)
+        }
+        UserDefaults.standard.set(favorites, forKey: "favorites")
+        coinTableView.reloadData()
+        print(favorites)
     }
 }
