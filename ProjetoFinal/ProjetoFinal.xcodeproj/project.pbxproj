@@ -24,6 +24,9 @@
 		A2A4AA6925BB19F9002B7F10 /* CoinTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4AA6825BB19F9002B7F10 /* CoinTableViewCellModel.swift */; };
 		A2A4AA7725BB41AD002B7F10 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4AA7525BB41AD002B7F10 /* LoadingCell.swift */; };
 		A2A4AA7825BB41AD002B7F10 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2A4AA7625BB41AD002B7F10 /* LoadingCell.xib */; };
+		A2A4AA7D25C0AE4E002B7F10 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4AA7C25C0AE4E002B7F10 /* ImageModel.swift */; };
+		A2A4AA8125C0AE67002B7F10 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4AA7F25C0AE66002B7F10 /* UIImageExtension.swift */; };
+		A2A4AA8225C0AE67002B7F10 /* MoedaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A4AA8025C0AE67002B7F10 /* MoedaAPI.swift */; };
 		A7B65738C9A615CC6EED2B8E /* Pods_ProjetoFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8C014F99FB46E9852BE48F /* Pods_ProjetoFinal.framework */; };
 		D185E19EFE54506B0662701D /* Pods_ProjetoFinal_ProjetoFinalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6B30106D67920851124327 /* Pods_ProjetoFinal_ProjetoFinalUITests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,9 @@
 		A2A4AA6825BB19F9002B7F10 /* CoinTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCellModel.swift; sourceTree = "<group>"; };
 		A2A4AA7525BB41AD002B7F10 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		A2A4AA7625BB41AD002B7F10 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		A2A4AA7C25C0AE4E002B7F10 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		A2A4AA7F25C0AE66002B7F10 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		A2A4AA8025C0AE67002B7F10 /* MoedaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoedaAPI.swift; sourceTree = "<group>"; };
 		AD6B30106D67920851124327 /* Pods_ProjetoFinal_ProjetoFinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoFinal_ProjetoFinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39DBDE68D5CB724A6797016 /* Pods-ProjetoFinal-ProjetoFinalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFinal-ProjetoFinalUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProjetoFinal-ProjetoFinalUITests/Pods-ProjetoFinal-ProjetoFinalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +129,7 @@
 		3AC214C725B9FB9200EAC6D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2A4AA7C25C0AE4E002B7F10 /* ImageModel.swift */,
 				3AC214C925B9FBBA00EAC6D7 /* CoinModel.swift */,
 			);
 			path = Model;
@@ -171,6 +178,7 @@
 		A223F0E325B9BDCA00BD0A10 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				A2A4AA7E25C0AE59002B7F10 /* Service */,
 				3AC214C825B9FB9800EAC6D7 /* ViewModel */,
 				3AC214C725B9FB9200EAC6D7 /* Model */,
 				A223F13A25B9F69D00BD0A10 /* View */,
@@ -246,6 +254,15 @@
 				A2A4AA7625BB41AD002B7F10 /* LoadingCell.xib */,
 			);
 			path = CoinList;
+			sourceTree = "<group>";
+		};
+		A2A4AA7E25C0AE59002B7F10 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A2A4AA8025C0AE67002B7F10 /* MoedaAPI.swift */,
+				A2A4AA7F25C0AE66002B7F10 /* UIImageExtension.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,12 +524,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2A4AA3C25BB09B1002B7F10 /* Bindable.swift in Sources */,
+				A2A4AA7D25C0AE4E002B7F10 /* ImageModel.swift in Sources */,
 				A2A4AA4125BB0BB4002B7F10 /* CoinViewData.swift in Sources */,
 				A2A4AA2C25BB01FA002B7F10 /* CoinTableViewCell.swift in Sources */,
+				A2A4AA8125C0AE67002B7F10 /* UIImageExtension.swift in Sources */,
 				A223F0E925B9BDCA00BD0A10 /* CoinListViewController.swift in Sources */,
 				A2A4AA6925BB19F9002B7F10 /* CoinTableViewCellModel.swift in Sources */,
 				3AC214CA25B9FBBA00EAC6D7 /* CoinModel.swift in Sources */,
 				A2A4AA7725BB41AD002B7F10 /* LoadingCell.swift in Sources */,
+				A2A4AA8225C0AE67002B7F10 /* MoedaAPI.swift in Sources */,
 				A223F0E525B9BDCA00BD0A10 /* AppDelegate.swift in Sources */,
 				A2A4AA4925BB0E8E002B7F10 /* CoinListViewModel.swift in Sources */,
 			);
