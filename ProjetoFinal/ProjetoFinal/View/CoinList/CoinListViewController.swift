@@ -25,6 +25,12 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         coinTableView.dataSource = self
         coinTableView.delegate = self
         bind()
+        primeiraVez()
+    }
+    func primeiraVez(){
+        if UserDefaults.standard.array(forKey: "favorites") as? [String] == nil {
+            UserDefaults.standard.set([], forKey: "favorites")
+        }
     }
     func bind() {
         viewModel.viewData.bind { (_) in
