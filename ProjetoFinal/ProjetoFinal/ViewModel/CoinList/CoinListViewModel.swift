@@ -16,6 +16,11 @@ class CoinListViewModel {
     // init(client: FilmeAPIProtocol = FilmeAPI()) {
     //    self.client = client
     // }
+    
+    init(){
+        loadCoins()
+    }
+    
     // MARK: - Methods
     func loadCoins() {
         coinInfo { (response) in

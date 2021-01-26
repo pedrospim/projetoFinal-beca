@@ -13,27 +13,29 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var nameCoinLabel: UILabel!
     @IBOutlet weak var shortnameCoinLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
     // MARK: - Variables
-    var viewModel:CoinTableViewCellModel? = nil
+    var viewModel:CoinTableViewCellModel = CoinTableViewCellModel()
     // MARK: - Inicializacao
     override func awakeFromNib() {
         super.awakeFromNib()
-        bind()
-        setup()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    func setup(coin:CoinViewData){
+        bind()
+        viewModel.loadInfo(coin: coin)
+        config()
+    }
     func bind(){
-        viewModel?.viewData.bind({ (response) in
+        viewModel.viewData.bind({ (response) in
             guard let `response` = response else { return }
             self.nameCoinLabel.text = response.name
             self.shortnameCoinLabel.text = response.shortname
             self.priceLabel.text = response.price
         })
     }
-    func setup() {
+    func config() {
         coinImage.layer.cornerRadius = 25 
         coinImage.layer.masksToBounds = true
     }
