@@ -17,7 +17,7 @@ class MoedaAPI {
     var listaImagens: ImageModel = []
 
     // MARK: - Get Moedas
-    func coinInfo(url: String = "https://6bb67689-21ec-4ba0-ad09-67d21f258f2b.mock.pstmn.io/BTC_GET_200", completion: @escaping (CoinModel) -> Void) {
+    func coinInfo(url: String = "https://rest-sandbox.coinapi.io/v1/assets/?apikey=6EE0C17A-1797-46A3-A62B-D9B69FC1FC9A", completion: @escaping (CoinModel) -> Void) {
         Alamofire.request(url, method: .get).responseJSON { (resposta) in
             switch resposta.result {
             case .success:
@@ -58,7 +58,7 @@ class MoedaAPI {
     }
     // MARK: - Get Image
     func imageInfo(tamanho: Int, completion: @escaping (ImageModel) -> Void) {
-        let key = "6EE0C17A-1797-46A3-A62B-D9B69FC1FC9A"
+        let key = "04D7059E-2345-4BDA-B196-DED63361DC49"
         Alamofire.request("https://rest-sandbox.coinapi.io/v1/assets/icons/\(tamanho)/?apikey=\(key)", method: .get).responseJSON { (resposta) in
             switch resposta.result {
             case .success:
