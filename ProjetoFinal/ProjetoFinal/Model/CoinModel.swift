@@ -9,14 +9,22 @@ import Foundation
 
 // MARK: - CoinModelElement
 struct CoinModelElement: Codable {
+<<<<<<< HEAD
+    let assetID, name: String?
+=======
     var assetID: String?
     var name:String?
+>>>>>>> develop
     let typeIsCrypto: Int?
     let dataStart, dataEnd, dataQuoteStart, dataQuoteEnd: String?
     let dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd: String?
     let dataSymbolsCount: Int?
+<<<<<<< HEAD
+    let volume1HrsUsd, volume1DayUsd, volume1MthUsd: Double?
+=======
     let volume1HrsUsd, volume1DayUsd: Double?
     let volume1MthUsd: Double?
+>>>>>>> develop
     let priceUsd: Double?
     let idIcon: String?
 
