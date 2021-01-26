@@ -8,6 +8,7 @@
 import UIKit
 
 class ListagemMoedasViewController: UIViewController {
+
     let client = MoedaAPI()
     var listaMoedas:CoinModel = []
 
@@ -22,10 +23,19 @@ class ListagemMoedasViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        recebeCoins()
+        print(listaMoedas)
+//        print(listaMoedas)
+//        client.imageInfo(tamanho: 32) { (response) in
+//            self.listaMoedas = response
+//            print(self.listaMoedas)
+//        }
+        view.backgroundColor = .purple
+    }
+    func recebeCoins(){
         client.coinInfo { (response) in
             self.listaMoedas = response
             print(self.listaMoedas)
         }
-        view.backgroundColor = .purple
     }
 }
