@@ -16,12 +16,14 @@ protocol CoinViewDataType {
 
 class CoinViewData : NSObject {
     private let model:CoinModelElement
-    init(model: CoinModelElement) {
+    var linkImage:String
+    init(model: CoinModelElement, linkImage: String) {
         self.model = model
+        self.linkImage = linkImage
     }
 }
 
-extension CoinViewData : CoinViewDataType {
+extension CoinViewData : CoinViewDataType { 
     var name: String {
             guard let name = model.name else { return ""}
             return name

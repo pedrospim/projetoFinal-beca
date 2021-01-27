@@ -37,6 +37,7 @@ class CoinTableViewCell: UITableViewCell {
             } else {
                 self.nameCoinLabel.text = response.name
             }
+            self.coinImage.carregarImagem(url: response.linkImage)
         })
     }
     func config() {

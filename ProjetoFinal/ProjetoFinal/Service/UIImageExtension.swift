@@ -16,7 +16,9 @@ extension UIImageView {
         guard let imageurl = URL(string: url) else {return}
         Alamofire.request(imageurl).responseImage { (response) in
             if let image = response.result.value {
+                DispatchQueue.main.async {
                     self.image = image
+                }
             }
         }
     }

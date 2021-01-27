@@ -53,11 +53,6 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         guard let celula = tableView.dequeueReusableCell(withIdentifier: "coinCell") as? CoinTableViewCell else {
             fatalError("The dequeued cell is not an instance of celulaMoeda.")
         }
-        if viewModel.imagens.value.count > 1 {
-        if let url = viewModel.imagens.value[indexPath.row].url {
-            celula.coinImage.carregarImagem(url: url)
-        }
-        }
         celula.setup(coin: viewModel.viewData.value[indexPath.row])
         return celula
     }
