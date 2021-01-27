@@ -11,6 +11,7 @@ protocol CoinViewDataType {
     var name: String { get}
     var shortname: String { get }
     var price: String { get }
+    var idIcon: String { get }
     var isFav: Bool { get }
 }
 
@@ -22,6 +23,12 @@ class CoinViewData : NSObject {
 }
 
 extension CoinViewData : CoinViewDataType {
+    var idIcon: String {
+        guard let idIcon = model.idIcon else { return "" }
+        let idIconFormatado = idIcon.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
+        return idIconFormatado
+    }
+    
     var name: String {
             guard let name = model.name else { return ""}
             return name

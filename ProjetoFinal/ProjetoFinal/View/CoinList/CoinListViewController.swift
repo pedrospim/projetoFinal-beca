@@ -26,6 +26,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         coinTableView.delegate = self
         bind()
         primeiraVez()
+        //setupTableView()
     }
     func primeiraVez(){
         if UserDefaults.standard.array(forKey: "favorites") as? [String] == nil {
@@ -52,11 +53,6 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         guard let celula = tableView.dequeueReusableCell(withIdentifier: "coinCell") as? CoinTableViewCell else {
             fatalError("The dequeued cell is not an instance of celulaMoeda.")
-        }
-        if viewModel.imagens.value.count > 1 {
-        if let url = viewModel.imagens.value[indexPath.row].url {
-            celula.coinImage.carregarImagem(url: url)
-        }
         }
         celula.setup(coin: viewModel.viewData.value[indexPath.row])
         return celula

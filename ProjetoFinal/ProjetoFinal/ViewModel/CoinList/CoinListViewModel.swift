@@ -28,8 +28,6 @@ class CoinListViewModel {
                 self.viewData.value.append(CoinViewData(model: coin))
             }
         }
-        client.imageInfo(tamanho: 16) { (response) in
-            self.imagens.value.append(contentsOf: response)
-        }
     }
+
 }
