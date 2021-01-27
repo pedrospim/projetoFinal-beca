@@ -26,9 +26,9 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         coinTableView.delegate = self
         bind()
         primeiraVez()
-        //setupTableView()
+        // setupTableView()
     }
-    func primeiraVez(){
+    func primeiraVez() {
         if UserDefaults.standard.array(forKey: "favorites") as? [String] == nil {
             UserDefaults.standard.set([], forKey: "favorites")
         }
@@ -62,7 +62,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         guard var favorites = UserDefaults.standard.array(forKey: "favorites") as? [String] else { return }
         if favorites.contains(shortname) {
             favorites.removeAll { $0 == shortname }
-        }else{
+        } else {
             favorites.append(shortname)
         }
         UserDefaults.standard.set(favorites, forKey: "favorites")

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Commons
 
 protocol CoinViewDataType {
     var name: String { get}
@@ -28,7 +29,7 @@ extension CoinViewData : CoinViewDataType {
         let idIconFormatado = idIcon.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
         return idIconFormatado
     }
-    
+
     var name: String {
             guard let name = model.name else { return ""}
             return name
@@ -38,7 +39,7 @@ extension CoinViewData : CoinViewDataType {
         return shortname
     }
     var price: String {
-        guard let preco = model.priceUsd else { return ""}
+        guard let preco = model.priceUsd?.currencyUS else { return ""}
         return String(describing: preco)
     }
     var isFav: Bool {

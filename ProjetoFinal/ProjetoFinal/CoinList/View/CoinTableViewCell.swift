@@ -14,7 +14,7 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var shortnameCoinLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     // MARK: - Variables
-    //arrumar
+    // arrumar
     var viewModel = CoinTableViewCellModel()
     // MARK: - Inicializacao
     override func awakeFromNib() {

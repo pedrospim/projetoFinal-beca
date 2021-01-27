@@ -2,20 +2,33 @@ PODS:
   - Alamofire (4.7.3)
   - AlamofireImage (3.4.1):
     - Alamofire (~> 4.7)
+  - Commons (0.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.0)
   - AlamofireImage (~> 3.4.0)
+  - Commons (from `https://github.com/Lleitao1/Commons.git`, branch `main`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
 
+EXTERNAL SOURCES:
+  Commons:
+    :branch: main
+    :git: https://github.com/Lleitao1/Commons.git
+
+CHECKOUT OPTIONS:
+  Commons:
+    :commit: 77eb7a62f41ff2c12558fca5d46bbe8ceb309f1c
+    :git: https://github.com/Lleitao1/Commons.git
+
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
+  Commons: 2584de6edb79cb56f2afffaef755a9b6a80ba5a1
 
-PODFILE CHECKSUM: e821f86255193b789b9dff1e6e773864aa4c1112
+PODFILE CHECKSUM: fc666b3280b2d7ce802ccc5d93b9281cd78006b3
 
 COCOAPODS: 1.10.1
