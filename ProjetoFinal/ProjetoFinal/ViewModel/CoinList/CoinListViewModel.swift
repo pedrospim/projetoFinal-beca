@@ -23,19 +23,11 @@ class CoinListViewModel {
     }
     // MARK: - Methods
     func loadCoins() {
-        client.coinInfo { (responseCoin) in
-            self.client.imageInfo(tamanho: 16) { (responseImage) in
-                for coin in responseCoin {
-                    if let match = responseImage.first(where: { $0.assetID == coin.assetID }) {
-                        guard let url = match.url else { return }
-                            self.viewData.value.append(CoinViewData(model: coin,linkImage: url))
-                        } else {
-                            self.viewData.value.append(CoinViewData(model: coin,linkImage: "https://icons.iconarchive.com/icons/icons8/windows-8/256/Systems-Mac-Os-icon.png"))
-                        }
-                }
-                // self.imagens.value.append(contentsOf: responseImage)
+        client.coinInfo { (response) in
+            for coin in response {
+                self.viewData.value.append(CoinViewData(model: coin))
             }
         }
-        
     }
+
 }

@@ -14,7 +14,8 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var shortnameCoinLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     // MARK: - Variables
-    var viewModel:CoinTableViewCellModel = CoinTableViewCellModel()
+    //arrumar
+    var viewModel = CoinTableViewCellModel()
     // MARK: - Inicializacao
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,25 +24,23 @@ class CoinTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     func setup(coin:CoinViewData) {
-        bind()
         viewModel.loadInfo(coin: coin)
-        config()
+        bind()
     }
     func bind() {
-        viewModel.viewData.bind({ (response) in
-            guard let `response` = response else { return }
-            self.shortnameCoinLabel.text = response.shortname
-            self.priceLabel.text = response.price
+            print("a")
+            guard let response = viewModel.viewData.value else { return }
+            shortnameCoinLabel.text = response.shortname
+            priceLabel.text = response.price
             if response.isFav {
-                self.nameCoinLabel.text = response.name + " ★"
+                nameCoinLabel.text = response.name + " ★"
             } else {
-                self.nameCoinLabel.text = response.name
+                nameCoinLabel.text = response.name
             }
-            self.coinImage.carregarImagem(url: response.linkImage)
-        })
-    }
-    func config() {
-        coinImage.layer.cornerRadius = 25 
-        coinImage.layer.masksToBounds = true
+        if response.idIcon != ""{
+            coinImage.carregarImagem(idIcon: response.idIcon)
+            } else {
+                coinImage.image = UIImage(named: "iconPlaceholder")
+            }
     }
 }
