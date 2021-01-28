@@ -7,6 +7,7 @@
 
 import UIKit
 import Commons
+import detalhesBit
 
 class CoinListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Outlets
@@ -75,7 +76,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let coin = viewModel.viewData.value[indexPath.row]
-        sharedFavorites.toggleFavorite(shortname: coin.shortname, name: coin.name, price: coin.price, idIcon: coin.idIcon, valueHour: coin.valueHour, valueDay: coin.valueDay, valueMonth: coin.valueMonth)
-        coinTableView.reloadData()
+        let controller = DetalhesBitCoinViewController(coin.price, coin.shortname, coin.valueHour, coin.valueMonth, coin.valueDay, sharedFavorites.checkIfFavorite(assetId: coin.shortname))
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

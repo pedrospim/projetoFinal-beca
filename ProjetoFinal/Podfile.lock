@@ -29,10 +29,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Commons:
-    :commit: e3adc5c3b552d44d731f28e09b54c32cae99d6ac
+    :commit: b0774efeeaec213197cb0862df91777fc2c0ecd1
     :git: https://github.com/Lleitao1/Commons.git
   detalhesBit:
-    :commit: 9dc81a794aec75a6432d936037cdc7b67b998c25
+    :commit: ef104b6aa579b46b712ff562efc3c682cc0c2156
     :git: https://github.com/mathiasnonohay/moduloDetalhesBit.git
 
 SPEC CHECKSUMS:

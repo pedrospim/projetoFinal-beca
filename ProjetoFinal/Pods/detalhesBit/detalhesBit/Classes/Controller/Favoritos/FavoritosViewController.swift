@@ -67,8 +67,17 @@ extension FavoritosViewController: UICollectionViewDelegate, UICollectionViewDat
         return celula
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let str = arrStrin[indexPath.row]
-       // let controller = DetalhesBitCoinViewController(self.valor, self.nome, self.valorHora, self.valorMes, self.valorAno, self.favorito, self.numCelula)
-       // self.navigationController?.pushViewController(controller, animated: true)
+        let idCoin = Array(listFavorites.keys)[indexPath.row]
+        guard let dictCoin = listFavorites[idCoin] else { return }
+        
+        guard let price = dictCoin["price"] else { return }
+        guard let name = dictCoin["name"] else { return }
+        guard let valorHora = dictCoin["valueHour"] else { return }
+        guard let valorDia = dictCoin["valueDay"] else { return }
+        guard let valorMes = dictCoin["valueMonth"] else { return }
+        
+        
+        let controller = DetalhesBitCoinViewController(price, name, valorHora, valorMes, valorDia, true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

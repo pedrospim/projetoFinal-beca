@@ -25,19 +25,17 @@ public class DetalhesBitCoinViewController: UIViewController {
     private var valorMes: String!
     private var valorAno: String!
     private var favorito: Bool!
-    private var numCelula: Int!
 
     // MARK: - Contructor
     
     // Detalhe pode pegar só os valores sem problemas
-    public init(_ valor: String, _ nome: String, _ valorHora: String, _ valorMes: String, _ valorAno: String, _ favorito: Bool, _ numCelula: Int) {
+    public init(_ valor: String, _ nome: String, _ valorHora: String, _ valorMes: String, _ valorAno: String, _ favorito: Bool) {
         self.valor = valor
         self.nome = nome
         self.valorHora = valorHora
         self.valorMes = valorMes
         self.valorAno = valorAno
         self.favorito = favorito
-        self.numCelula = numCelula
         
         super.init(nibName: "DetalhesBitCoinViewController", bundle: Bundle(for: DetalhesBitCoinViewController.self))
     }
