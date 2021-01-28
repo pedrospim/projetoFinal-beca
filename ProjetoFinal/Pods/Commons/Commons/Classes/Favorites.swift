@@ -7,20 +7,20 @@
 
 import Foundation
 
-let sharedFavorites = Favorites()
+public let sharedFavorites = Favorites()
 
-class Favorites {
-    func getFavorites() -> [String:[String: String]] {
+public class Favorites {
+    public func getFavorites() -> [String:[String: String]] {
         guard let favorites = UserDefaults.standard.object(forKey: "favorites") as? [String:[String: String]] else { return [:]}
         return favorites
     }
 
-    func checkIfFirstTime() {
+    public func checkIfFirstTime() {
         if UserDefaults.standard.object(forKey: "favorites") as? [String:[String: String]] == nil {
             UserDefaults.standard.set([:], forKey: "favorites")
         }
     }
-    func toggleFavorite(shortname:String, name:String, price:String, idIcon: String) {
+    public func toggleFavorite(shortname:String, name:String, price:String, idIcon: String) {
         var favorites = getFavorites()
         if favorites[shortname] == nil {
             favorites[shortname] = ["name":name,"price":price, "idIcon":idIcon]
@@ -29,7 +29,7 @@ class Favorites {
         }
         UserDefaults.standard.set(favorites, forKey: "favorites")
     }
-    func checkIfFavorite(assetId:String) -> Bool{
+    public func checkIfFavorite(assetId:String) -> Bool{
         let favorites = getFavorites()
         if favorites[assetId] != nil {
             return true

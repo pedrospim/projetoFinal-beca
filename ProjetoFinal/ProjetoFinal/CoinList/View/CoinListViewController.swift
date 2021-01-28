@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Commons
 
 class CoinListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Outlets

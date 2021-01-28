@@ -1,6 +1,6 @@
 {
   "name": "Commons",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A short description of Commons.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Lleitao1/Commons",
@@ -13,10 +13,19 @@
   },
   "source": {
     "git": "https://github.com/Lleitao1/Commons.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "Commons/Classes/**/*"
+  "source_files": "Commons/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "Alamofire": [
+      "~> 4.7.0"
+    ],
+    "AlamofireImage": [
+      "~> 3.4.0"
+    ]
+  }
 }
