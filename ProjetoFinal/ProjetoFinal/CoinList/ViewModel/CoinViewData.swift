@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Commons
 
 protocol CoinViewDataType {
     var name: String { get}
@@ -38,7 +39,8 @@ extension CoinViewData : CoinViewDataType {
         return shortname
     }
     var price: String {
-        guard let preco = model.priceUsd else { return ""}
+        guard let preco = model.priceUsd?.currencyUS else { return ""}
+        
         return String(describing: preco)
     }
     var isFav: Bool {
