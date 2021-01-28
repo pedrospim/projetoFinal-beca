@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import detalhesBit
 
 class MainTabBarViewController: UITabBarController {
 
@@ -18,7 +19,7 @@ class MainTabBarViewController: UITabBarController {
         coinListViewController.tabBarItem = UITabBarItem()
         coinListViewController.tabBarItem.image = UIImage(named: "iconMoney")
         coinListViewController.tabBarItem.title = "Crypto Coins"
-        let favoritesViewController = UIViewController()
+        let favoritesViewController = FavoritosViewController("30", "BTC", "10", "jan", "2021", true, 5)
         favoritesViewController.tabBarItem = UITabBarItem()
         favoritesViewController.tabBarItem.image = UIImage(named: "iconFavorites")
         favoritesViewController.tabBarItem.title = "Adicionadas"

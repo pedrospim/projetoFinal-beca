@@ -7,6 +7,7 @@ target 'ProjetoFinal' do
   pod 'Alamofire', '~> 4.7.0'
   pod 'AlamofireImage', '~> 3.4.0'
   pod 'Commons' , :git=>'https://github.com/Lleitao1/Commons.git', :branch=>'main'
+  pod 'detalhesBit' , :git=>'https://github.com/mathiasnonohay/moduloDetalhesBit.git', :branch=>'develop'
 
   # Pods for ProjetoFinal
 

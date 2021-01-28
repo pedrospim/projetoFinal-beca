@@ -1,0 +1,6 @@
+framework module detalhesBit {
+  umbrella header "detalhesBit-umbrella.h"
+
+  export *
+  module * { export * }
+}
