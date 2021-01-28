@@ -24,7 +24,6 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         setupTableView()
         bind()
-        primeiraVez()
     }
     func setupTableView(){
         coinTableView.dataSource = self
@@ -32,11 +31,6 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         coinTableView.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         let tableViewLoadingCellNib = UINib(nibName: "LoadingCell", bundle: nil)
             coinTableView.register(tableViewLoadingCellNib, forCellReuseIdentifier: "loadingCell")
-    }
-    func primeiraVez() {
-        if UserDefaults.standard.array(forKey: "favorites") as? [String] == nil {
-            UserDefaults.standard.set([], forKey: "favorites")
-        }
     }
     func bind() {
         viewModel.viewData.bind { (_) in
@@ -79,15 +73,8 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         return 2
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shortname = viewModel.viewData.value[indexPath.row].shortname
-        guard var favorites = UserDefaults.standard.array(forKey: "favorites") as? [String] else { return }
-        if favorites.contains(shortname) {
-            favorites.removeAll { $0 == shortname }
-        } else {
-            favorites.append(shortname)
-        }
-        UserDefaults.standard.set(favorites, forKey: "favorites")
+        let coin = viewModel.viewData.value[indexPath.row]
+        sharedFavorites.toggleFavorite(shortname: coin.shortname, name: coin.name, price: coin.price, idIcon: coin.idIcon)
         coinTableView.reloadData()
-        print(favorites)
     }
 }
