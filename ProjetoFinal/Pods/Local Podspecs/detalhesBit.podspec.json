@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "detalhesBit/Classes/**/*"
+  "source_files": "detalhesBit/Classes/**/*",
+  "dependencies": {
+    "Commons": [
+
+    ]
+  }
 }

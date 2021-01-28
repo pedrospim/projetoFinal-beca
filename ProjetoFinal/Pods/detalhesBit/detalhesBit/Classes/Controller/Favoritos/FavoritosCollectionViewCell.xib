@@ -35,8 +35,8 @@
                         <color key="textColor" red="0.99164897200000002" green="0.99356168509999998" blue="0.92940312619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-VO-I1Y">
-                        <rect key="frame" x="110" y="0.0" width="45" height="45"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-VO-I1Y">
+                        <rect key="frame" x="110" y="2.5" width="45" height="40.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="6Xb-zY-q33"/>
                             <constraint firstAttribute="width" constant="45" id="vcO-9I-pnt"/>
@@ -72,4 +72,7 @@
             <point key="canvasLocation" x="177.536231884058" y="115.17857142857142"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

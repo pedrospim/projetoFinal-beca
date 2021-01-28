@@ -75,7 +75,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let coin = viewModel.viewData.value[indexPath.row]
-        sharedFavorites.toggleFavorite(shortname: coin.shortname, name: coin.name, price: coin.price, idIcon: coin.idIcon)
+        sharedFavorites.toggleFavorite(shortname: coin.shortname, name: coin.name, price: coin.price, idIcon: coin.idIcon, valueHour: coin.valueHour, valueDay: coin.valueDay, valueMonth: coin.valueMonth)
         coinTableView.reloadData()
     }
 }

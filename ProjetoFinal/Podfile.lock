@@ -5,7 +5,8 @@ PODS:
   - Commons (1.0.0):
     - Alamofire (~> 4.7.0)
     - AlamofireImage (~> 3.4.0)
-  - detalhesBit (1.2.4)
+  - detalhesBit (1.2.4):
+    - Commons
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.0)
@@ -28,17 +29,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Commons:
-    :commit: 2e1df138be39c728cbc17146d0ad9def4ce97fb9
+    :commit: e3adc5c3b552d44d731f28e09b54c32cae99d6ac
     :git: https://github.com/Lleitao1/Commons.git
   detalhesBit:
-    :commit: b51b5f5b76c3b8a2526b88ade0c1de2113fc52f4
+    :commit: 9dc81a794aec75a6432d936037cdc7b67b998c25
     :git: https://github.com/mathiasnonohay/moduloDetalhesBit.git
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   Commons: d94aaac26d26a8bdc8e6686bca345428ab2934f7
-  detalhesBit: d327709fce2b25479d7822247fbf6fea343f991b
+  detalhesBit: 3045cd2e0694bfdf91f713dd1f4ea847466b8fb1
 
 PODFILE CHECKSUM: 580f1244903cd6192a09f863154091ad9fd373ff
 

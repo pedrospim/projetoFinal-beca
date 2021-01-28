@@ -10,6 +10,7 @@ import Foundation
 public let sharedFavorites = Favorites()
 
 public class Favorites {
+    
     public func getFavorites() -> [String:[String: String]] {
         guard let favorites = UserDefaults.standard.object(forKey: "favorites") as? [String:[String: String]] else { return [:]}
         return favorites
@@ -20,10 +21,10 @@ public class Favorites {
             UserDefaults.standard.set([:], forKey: "favorites")
         }
     }
-    public func toggleFavorite(shortname:String, name:String, price:String, idIcon: String) {
+    public func toggleFavorite(shortname:String, name:String, price:String, idIcon: String, valueHour:String, valueDay:String, valueMonth:String) {
         var favorites = getFavorites()
         if favorites[shortname] == nil {
-            favorites[shortname] = ["name":name,"price":price, "idIcon":idIcon]
+            favorites[shortname] = ["name":name,"price":price, "idIcon":idIcon, "valueHour": valueHour, "valueDay": valueDay, "valueMonth": valueMonth]
         } else {
             favorites[shortname] = nil
         }
@@ -37,4 +38,5 @@ public class Favorites {
             return false
         }
     }
+    
 }

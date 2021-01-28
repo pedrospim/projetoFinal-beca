@@ -12,6 +12,9 @@ protocol CoinViewDataType {
     var name: String { get}
     var shortname: String { get }
     var price: String { get }
+    var valueHour : String { get }
+    var valueDay : String { get }
+    var valueMonth : String { get }
     var idIcon: String { get }
     var isFav: Bool { get }
 }
@@ -24,6 +27,21 @@ class CoinViewData : NSObject {
 }
 
 extension CoinViewData : CoinViewDataType {
+    var valueHour: String {
+        guard let preco = model.volume1HrsUsd?.currencyUS else { return ""}
+        return String(describing: preco)
+    }
+    
+    var valueDay: String {
+        guard let preco = model.volume1DayUsd?.currencyUS else { return ""}
+        return String(describing: preco)
+    }
+    
+    var valueMonth: String {
+        guard let preco = model.volume1MthUsd?.currencyUS else { return ""}
+        return String(describing: preco)
+    }
+    
     var idIcon: String {
         guard let idIcon = model.idIcon else { return "" }
         let idIconFormatado = idIcon.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Commons
 
 public class FavoritosViewController: UIViewController {
 
@@ -15,27 +16,15 @@ public class FavoritosViewController: UIViewController {
     private var arrStrin: Array<Any> = []
     
     // MARK: - Atributos
-    private var valor: String!
-    private var nome: String!
-    private var valorHora: String!
-    private var valorMes: String!
-    private var valorAno: String!
-    private var favorito: Bool!
-    private var numCelula: Int!
+    private var listFavorites:[String:[String:String]] = [:]
 
     // MARK: - Contructor
     
     // Favoritos precisam pegar umas lista de coins para listar corretamente
     // No momento só pega um e lista X vezes aquele coin
-    public init(_ valor: String, _ nome: String, _ valorHora: String, _ valorMes: String, _ valorAno: String, _ favorito: Bool, _ numCelula: Int) {
-        self.valor = valor
-        self.nome = nome
-        self.valorHora = valorHora
-        self.valorMes = valorMes
-        self.valorAno = valorAno
-        self.favorito = favorito
-        self.numCelula = numCelula
+    public init() {
         super.init(nibName: "FavoritosViewController", bundle: Bundle(for: FavoritosViewController.self))
+        listFavorites = sharedFavorites.getFavorites()
     }
     
     required init?(coder: NSCoder) {
@@ -59,25 +48,27 @@ extension FavoritosViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.numCelula
+        return listFavorites.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: celulaFavoritosIdentifier, for: indexPath) as!
             FavoritosCollectionViewCell
-        guard let nome = self.nome else { return celula }
-        guard let valor = self.valor else { return celula }
-        celula.nomeBit.text = nome
-        celula.idBit.text = nome
         
-        celula.valorBit.text = valor
-//        celula.imageBit.image = self.imageBit
+        let idCoin = Array(listFavorites.keys)[indexPath.row]
+        let dictCoin = listFavorites[idCoin]
+        
+        celula.nomeBit.text = dictCoin?["name"]
+        celula.idBit.text = idCoin
+        
+        celula.valorBit.text = dictCoin?["price"]
+        celula.imageBit.carregarImagem(idIcon: dictCoin?["idIcon"] ?? "")
         
         return celula
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let str = arrStrin[indexPath.row]
-        let controller = DetalhesBitCoinViewController(self.valor, self.nome, self.valorHora, self.valorMes, self.valorAno, self.favorito, self.numCelula)
-        self.navigationController?.pushViewController(controller, animated: true)
+       // let controller = DetalhesBitCoinViewController(self.valor, self.nome, self.valorHora, self.valorMes, self.valorAno, self.favorito, self.numCelula)
+       // self.navigationController?.pushViewController(controller, animated: true)
     }
 }
