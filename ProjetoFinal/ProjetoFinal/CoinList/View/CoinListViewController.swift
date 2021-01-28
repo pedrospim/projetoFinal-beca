@@ -27,6 +27,9 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         setupTableView()
         bind()
     }
+    public override func viewDidAppear(_ animated: Bool) {
+        coinTableView.reloadData()
+    }
     func setupTableView(){
         coinTableView.dataSource = self
         coinTableView.delegate = self
@@ -76,7 +79,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let coin = viewModel.viewData.value[indexPath.row]
-        let controller = DetalhesBitCoinViewController(coin.price, coin.shortname, coin.valueHour, coin.valueMonth, coin.valueDay, sharedFavorites.checkIfFavorite(assetId: coin.shortname))
+        let controller = DetalhesBitCoinViewController(coin.shortname, coin.price, coin.shortname, coin.valueHour, coin.valueMonth, coin.valueDay, coin.idIcon, sharedFavorites.checkIfFavorite(assetId: coin.shortname))
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

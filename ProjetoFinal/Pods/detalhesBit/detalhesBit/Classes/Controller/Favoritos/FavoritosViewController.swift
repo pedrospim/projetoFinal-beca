@@ -24,13 +24,15 @@ public class FavoritosViewController: UIViewController {
     // No momento só pega um e lista X vezes aquele coin
     public init() {
         super.init(nibName: "FavoritosViewController", bundle: Bundle(for: FavoritosViewController.self))
-        listFavorites = sharedFavorites.getFavorites()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    public override func viewDidAppear(_ animated: Bool) {
+        listFavorites = sharedFavorites.getFavorites()
+        collectionViewFavoritos.reloadData()
+    }
     override public func viewDidLoad() {
         super.viewDidLoad()
         collectionViewFavoritos.dataSource = self
@@ -75,9 +77,9 @@ extension FavoritosViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let valorHora = dictCoin["valueHour"] else { return }
         guard let valorDia = dictCoin["valueDay"] else { return }
         guard let valorMes = dictCoin["valueMonth"] else { return }
+        guard let idIcon = dictCoin["idIcon"] else { return }
         
-        
-        let controller = DetalhesBitCoinViewController(price, name, valorHora, valorMes, valorDia, true)
+        let controller = DetalhesBitCoinViewController(idCoin, price, name, valorHora, valorMes, valorDia, idIcon, true)
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }
