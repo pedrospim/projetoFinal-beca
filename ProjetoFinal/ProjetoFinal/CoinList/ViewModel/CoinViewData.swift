@@ -29,7 +29,6 @@ extension CoinViewData : CoinViewDataType {
         let idIconFormatado = idIcon.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
         return idIconFormatado
     }
-    
     var name: String {
             guard let name = model.name else { return ""}
             return name
@@ -40,14 +39,9 @@ extension CoinViewData : CoinViewDataType {
     }
     var price: String {
         guard let preco = model.priceUsd?.currencyUS else { return ""}
-        
         return String(describing: preco)
     }
     var isFav: Bool {
-        guard let favorites = UserDefaults.standard.array(forKey: "favorites") as? [String] else { return false}
-        if favorites.contains(shortname) {
-            return true
-        }
-        return false
+        return sharedFavorites.checkIfFavorite(assetId: shortname)
     }
 }
