@@ -15,7 +15,7 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     // MARK: - Variables
     //arrumar
-    var viewModel = CoinTableViewCellModel()
+    var viewModel:CoinTableViewCellModel?
     // MARK: - Inicializacao
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,24 +23,23 @@ class CoinTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    func setup(coin:CoinViewData) {
-        viewModel.loadInfo(coin: coin)
+    func setup(viewModel:CoinTableViewCellModel) {
+        self.viewModel = viewModel
         bind()
     }
     func bind() {
-            print("a")
-            guard let response = viewModel.viewData.value else { return }
-            shortnameCoinLabel.text = response.shortname
-            priceLabel.text = response.price
-            if response.isFav {
-                nameCoinLabel.text = response.name + " ★"
-            } else {
-                nameCoinLabel.text = response.name
-            }
-        if response.idIcon != ""{
-            coinImage.carregarImagem(idIcon: response.idIcon)
-            } else {
-                coinImage.image = UIImage(named: "iconPlaceholder")
-            }
+        guard let data = viewModel?.viewData.value else { return }
+        shortnameCoinLabel.text = data.shortname
+        priceLabel.text = data.price
+        if data.isFav {
+            nameCoinLabel.text = data.name + " ★"
+        } else {
+            nameCoinLabel.text = data.name
+        }
+        if data.idIcon != "" {
+            coinImage.carregarImagem(idIcon: data.idIcon)
+        } else {
+            coinImage.image = UIImage(named: "iconPlaceholder")
+        }
     }
 }

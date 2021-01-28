@@ -12,7 +12,7 @@ class CoinTableViewCellModel {
     // private let client: FilmeAPIProtocol
     var viewData: Bindable<CoinViewData?> = Bindable(nil)
     // MARK: - Constructors
-    func loadInfo(coin: CoinViewData) {
+    init(coin: CoinViewData) {
         self.viewData.value = coin
     }
 }
