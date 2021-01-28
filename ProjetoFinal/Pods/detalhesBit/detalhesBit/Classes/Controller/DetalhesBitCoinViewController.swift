@@ -42,6 +42,8 @@ public class DetalhesBitCoinViewController: UIViewController {
         self.shortname = shortname
         self.idIcon = idIcon
         
+        
+        
         super.init(nibName: "DetalhesBitCoinViewController", bundle: Bundle(for: DetalhesBitCoinViewController.self))
     }
     
@@ -52,14 +54,23 @@ public class DetalhesBitCoinViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         coinDetalhes(self.shortname, self.valor, self.nome, self.valorHora, self.valorMes, self.valorAno, self.idIcon, self.favorito)
+        setupBar()
     }
-    
+    public override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    private func setupBar(){
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 139/255, green: 152/255, blue: 48/155, alpha: 0)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 139/255, green: 152/255, blue: 48/155, alpha: 0)
+    }
     private func coinDetalhes(_ shortname:String, _ valor: String, _ nome: String, _ valorHora: String, _ valorMes: String, _ valorAno: String, _ idIcon:String, _ favorito: Bool) {
-        labelCoinValor.text = "$ \(valor)"
+        labelCoinValor.text = "\(valor)"
         labelCoinNome.text = nome
-        labelValorHor.text = "$ \(valorHora)"
-        labelValorMes.text = "$ \(valorMes)"
-        labelValorAno.text = "$ \(valorAno)"
+        labelValorHor.text = "\(valorHora)"
+        labelValorMes.text = "\(valorMes)"
+        labelValorAno.text = "\(valorAno)"
         if favorito == true {
             botaoAddRem.setTitle("REMOVER", for: .normal)
             labelEstrela.text = "★"

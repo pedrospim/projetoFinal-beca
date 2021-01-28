@@ -20,20 +20,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moeda Digital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-Ys-Ffi">
-                    <rect key="frame" x="107.5" y="59" width="160" height="50"/>
+                    <rect key="frame" x="107.5" y="107" width="160" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Ya4-h3-msB"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                    <color key="textColor" red="0.99164897200000002" green="0.99356168509999998" blue="0.92940312619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04 jan 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iha-0w-opH">
-                    <rect key="frame" x="143" y="117" width="89" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="V7N-MV-3pV"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                     <color key="textColor" red="0.99164897200000002" green="0.99356168509999998" blue="0.92940312619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -55,21 +46,28 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04 jan 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iha-0w-opH">
+                    <rect key="frame" x="143" y="141" width="89" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="V7N-MV-3pV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                    <color key="textColor" red="0.99164897200000002" green="0.99356168509999998" blue="0.92940312619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.10196160529999999" green="0.097945399579999995" blue="0.10196136679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="xTl-lI-XzI" firstAttribute="top" secondItem="iha-0w-opH" secondAttribute="bottom" constant="32" id="APL-8u-zDV"/>
-                <constraint firstItem="iha-0w-opH" firstAttribute="top" secondItem="oIb-Ys-Ffi" secondAttribute="bottom" constant="8" symbolic="YES" id="B4M-sW-OvO"/>
                 <constraint firstItem="oIb-Ys-Ffi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HHP-oF-dmT"/>
                 <constraint firstAttribute="trailing" secondItem="xTl-lI-XzI" secondAttribute="trailing" id="LW5-er-YWc"/>
                 <constraint firstItem="iha-0w-opH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="143" id="M8a-qf-guY"/>
-                <constraint firstItem="lwX-Pl-7jh" firstAttribute="top" secondItem="iha-0w-opH" secondAttribute="bottom" constant="41" id="WhG-GG-4Hv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iha-0w-opH" secondAttribute="trailing" constant="143" id="XTv-i4-zIz"/>
                 <constraint firstItem="lwX-Pl-7jh" firstAttribute="top" secondItem="xTl-lI-XzI" secondAttribute="bottom" constant="8" symbolic="YES" id="aEo-pN-48v"/>
+                <constraint firstItem="xTl-lI-XzI" firstAttribute="top" secondItem="iha-0w-opH" secondAttribute="bottom" constant="8" symbolic="YES" id="duU-0y-eCw"/>
                 <constraint firstItem="xTl-lI-XzI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="edd-V2-fnv"/>
                 <constraint firstItem="iha-0w-opH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fuS-s4-hkD"/>
-                <constraint firstItem="oIb-Ys-Ffi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="59" id="t3G-RG-uM5"/>
+                <constraint firstItem="oIb-Ys-Ffi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="107" id="k4O-Wx-q7I"/>
             </constraints>
             <point key="canvasLocation" x="136.80000000000001" y="102.99850074962519"/>
         </view>

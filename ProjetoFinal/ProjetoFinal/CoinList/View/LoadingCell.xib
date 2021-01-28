@@ -21,8 +21,8 @@
                         <rect key="frame" x="141.5" y="12" width="37" height="37"/>
                     </activityIndicatorView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" red="0.1015098467" green="0.09577465802" blue="0.101367183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="tintColor" red="0.1015098467" green="0.09577465802" blue="0.101367183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="NOs-hF-gUZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="GFh-0K-dhA"/>
                     <constraint firstItem="NOs-hF-gUZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="a1U-X3-Bfc"/>

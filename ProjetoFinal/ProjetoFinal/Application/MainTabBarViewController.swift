@@ -13,7 +13,7 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.tintColor = .lightGray
-        self.tabBar.barTintColor = .black
+        self.tabBar.barTintColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0)
         self.tabBar.isTranslucent = false
         let coinListViewController = CoinListViewController()
         coinListViewController.tabBarItem = UITabBarItem()

@@ -32,7 +32,7 @@ CHECKOUT OPTIONS:
     :commit: b0774efeeaec213197cb0862df91777fc2c0ecd1
     :git: https://github.com/Lleitao1/Commons.git
   detalhesBit:
-    :commit: b7811c3b8f5ee8305ff0da0b4cfcde7da78a224e
+    :commit: e8b2d329988da2854a835e56350265cfbda025bb
     :git: https://github.com/mathiasnonohay/moduloDetalhesBit.git
 
 SPEC CHECKSUMS:

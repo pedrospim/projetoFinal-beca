@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         sharedFavorites.checkIfFirstTime()
         let navigationController = UINavigationController()
+        navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.viewControllers = [MainTabBarViewController()]
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
