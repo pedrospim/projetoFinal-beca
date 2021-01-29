@@ -30,17 +30,18 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
     public override func viewDidAppear(_ animated: Bool) {
         coinTableView.reloadData()
     }
-    
+
     // MARK: - Funcoes de Inicializacao
-    func setupNavigationBar(){
+    func setupNavigationBar() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     func setupTableView() {
         coinTableView.dataSource = self
         coinTableView.delegate = self
         coinTableView.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
+
         let tableViewLoadingCellNib = UINib(nibName: "LoadingCell", bundle: nil)
-            coinTableView.register(tableViewLoadingCellNib, forCellReuseIdentifier: "loadingCell")
+            coinTableView?.register(tableViewLoadingCellNib, forCellReuseIdentifier: "loadingCell")
     }
     func bind() {
         viewModel.viewData.bind { (_) in
@@ -71,7 +72,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         cell.setup(viewModel: CoinTableViewCellModel(coin: viewModel.viewData.value[indexPath.row]))
         return cell
-        }else{
+        } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath) as? LoadingCell else {
                 fatalError("The dequeued cell is not an instance of celulaMoeda.")
             }
