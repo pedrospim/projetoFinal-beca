@@ -32,7 +32,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="66w-Lf-F0n">
+                <searchBar contentMode="redraw" barStyle="black" placeholder="Pesquisar" translatesAutoresizingMaskIntoConstraints="NO" id="66w-Lf-F0n">
                     <rect key="frame" x="0.0" y="94" width="320" height="56"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="barTintColor" red="0.1015098467" green="0.09577465802" blue="0.101367183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
