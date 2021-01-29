@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListagemMoedasViewController" customModule="ProjetoFinal" customModuleProvider="target">
             <connections>
                 <outlet property="coinTableView" destination="Zib-HP-EV2" id="6gK-AA-gcf"/>
+                <outlet property="searchBar" destination="66w-Lf-F0n" id="fUu-vu-HBi"/>
                 <outlet property="view" destination="iN0-l3-epB" id="25w-Qe-YGv"/>
             </connections>
         </placeholder>
