@@ -57,7 +57,7 @@ extension FavoritosViewController: UICollectionViewDelegate, UICollectionViewDat
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: celulaFavoritosIdentifier, for: indexPath) as!
             FavoritosCollectionViewCell
         
-        let idCoin = Array(listFavorites.keys)[indexPath.row]
+        let idCoin = Array(listFavorites.keys.sorted())[indexPath.row]
         let dictCoin = listFavorites[idCoin]
         
         celula.nomeBit.text = dictCoin?["name"]
@@ -70,7 +70,7 @@ extension FavoritosViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let idCoin = Array(listFavorites.keys)[indexPath.row]
+        let idCoin = Array(listFavorites.keys.sorted())[indexPath.row]
         guard let dictCoin = listFavorites[idCoin] else { return }
         
         guard let price = dictCoin["price"] else { return }
