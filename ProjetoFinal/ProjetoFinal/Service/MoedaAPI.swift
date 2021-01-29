@@ -5,7 +5,7 @@
 //  Created by Lucas Abdel Leitao on 22/01/21.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 
 enum HTTPResponse {
@@ -17,7 +17,7 @@ class MoedaAPI {
     var listaImagens: ImageModel = []
 
     // MARK: - Get Moedas
-    func coinInfo(url: String = "https://rest-sandbox.coinapi.io/v1/assets/?apikey=6EE0C17A-1797-46A3-A62B-D9B69FC1FC9A", completion: @escaping (CoinModel) -> Void) {
+    func coinInfo(url: String = "https://6bb67689-21ec-4ba0-ad09-67d21f258f2b.mock.pstmn.io/BTC_GET_400", completion: @escaping (CoinModel) -> Void) {
         Alamofire.request(url, method: .get).responseJSON { (resposta) in
             switch resposta.result {
             case .success:
@@ -30,10 +30,15 @@ class MoedaAPI {
             case .failure(let error):
                 let message: String
                 if let httpStatusCode = resposta.response?.statusCode {
+                    let viewController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
                     switch (httpStatusCode) {
                     case 400:
                         message = "Bad Request -- There is something wrong with your request"
                         print(message)
+                        let alert = UIAlertController(title: "Alerta", message: "\(message)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        viewController.present(alert, animated: true, completion: nil)
+                        
                     case 401:
                         message = "Unauthorized -- Your API key is wrong"
                         print(message)

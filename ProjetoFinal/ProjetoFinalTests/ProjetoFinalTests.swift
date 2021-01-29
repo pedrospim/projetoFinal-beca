@@ -7,27 +7,20 @@
 
 import XCTest
 @testable import ProjetoFinal
+@testable import Commons
+@testable import detalhesBit
 
 class ProjetoFinalTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    var lista:CoinModel = []
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let lista: CoinModelElement
+//        CoinListViewController().viewDidLoad()
+//        DetalhesBitCoinViewController
+        let client = MoedaAPI()
+        client.coinInfo { (response) in
+            self.lista = response
+            XCTAssertEqual(self.lista[0].assetID, "BTC")
         }
-    }
 
+    }
 }
