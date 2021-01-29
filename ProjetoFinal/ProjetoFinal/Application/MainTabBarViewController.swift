@@ -24,8 +24,7 @@ class MainTabBarViewController: UITabBarController {
         let tabBarList = [coinListViewController, favoritesViewController]
         viewControllers = tabBarList
     }
-    
-    func setupColors(){
+    func setupColors() {
         self.tabBar.tintColor = .lightGray
         self.tabBar.barTintColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0)
         self.tabBar.isTranslucent = false

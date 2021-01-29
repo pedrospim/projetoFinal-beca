@@ -11,6 +11,8 @@ import detalhesBit
 
 class CoinListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     // MARK: - Outlets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var coinTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Variables
