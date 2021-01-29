@@ -68,6 +68,7 @@ extension FavoritosViewController: UICollectionViewDelegate, UICollectionViewDat
         
         return celula
     }
+
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let idCoin = Array(listFavorites.keys)[indexPath.row]
         guard let dictCoin = listFavorites[idCoin] else { return }

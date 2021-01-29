@@ -41,7 +41,7 @@
                 <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="66w-Lf-F0n">
                     <rect key="frame" x="0.0" y="94" width="320" height="56"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" red="0.1015098467" green="0.09577465802" blue="0.101367183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu7-Wo-hj2">
@@ -53,13 +53,13 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zib-HP-EV2">
                     <rect key="frame" x="0.0" y="150" width="320" height="418"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.1015098467" green="0.09577465802" blue="0.101367183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                    <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" red="0.1015098467" green="0.09577465802" blue="0.101367183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.1015098467" green="0.09577465802" blue="0.101367183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Zib-HP-EV2" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3pf-jd-TL2"/>
                 <constraint firstItem="66w-Lf-F0n" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="6NX-Zg-wH7"/>

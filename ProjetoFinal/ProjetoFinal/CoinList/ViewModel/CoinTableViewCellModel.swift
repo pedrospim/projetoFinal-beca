@@ -9,7 +9,6 @@ import Foundation
 
 class CoinTableViewCellModel {
     // MARK: - Properts
-    // private let client: FilmeAPIProtocol
     var viewData: Bindable<CoinViewData?> = Bindable(nil)
     // MARK: - Constructors
     init(coin: CoinViewData) {

@@ -15,8 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         sharedFavorites.checkIfFirstTime()
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [MainTabBarViewController()]
+        let navigationController = MainNavigationViewController()
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         // Override point for customization after application launch.

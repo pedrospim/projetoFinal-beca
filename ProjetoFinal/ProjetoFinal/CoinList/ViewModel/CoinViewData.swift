@@ -31,17 +31,14 @@ extension CoinViewData : CoinViewDataType {
         guard let preco = model.volume1HrsUsd?.currencyUS else { return ""}
         return String(describing: preco)
     }
-    
     var valueDay: String {
         guard let preco = model.volume1DayUsd?.currencyUS else { return ""}
         return String(describing: preco)
     }
-    
     var valueMonth: String {
         guard let preco = model.volume1MthUsd?.currencyUS else { return ""}
         return String(describing: preco)
     }
-    
     var idIcon: String {
         guard let idIcon = model.idIcon else { return "" }
         let idIconFormatado = idIcon.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)

@@ -18,6 +18,7 @@ public class DetalhesBitCoinViewController: UIViewController {
     @IBOutlet weak var botaoAddRem: UIButton!
     @IBOutlet weak var favImage: UILabel!
     @IBOutlet weak var labelEstrela: UILabel!
+    @IBOutlet weak var imageBit: UIImageView!
     
     // MARK: - Atributos
     private var valor: String!
@@ -55,11 +56,12 @@ public class DetalhesBitCoinViewController: UIViewController {
     }
     
     private func coinDetalhes(_ shortname:String, _ valor: String, _ nome: String, _ valorHora: String, _ valorMes: String, _ valorAno: String, _ idIcon:String, _ favorito: Bool) {
-        labelCoinValor.text = "$ \(valor)"
+        labelCoinValor.text = "\(valor)"
         labelCoinNome.text = nome
-        labelValorHor.text = "$ \(valorHora)"
-        labelValorMes.text = "$ \(valorMes)"
-        labelValorAno.text = "$ \(valorAno)"
+        labelValorHor.text = "\(valorHora)"
+        labelValorMes.text = "\(valorMes)"
+        labelValorAno.text = "\(valorAno)"
+        imageBit.carregarImagem(idIcon: self.idIcon)
         if favorito == true {
             botaoAddRem.setTitle("REMOVER", for: .normal)
             labelEstrela.text = "★"
