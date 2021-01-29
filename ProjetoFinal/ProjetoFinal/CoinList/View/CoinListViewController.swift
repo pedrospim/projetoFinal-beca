@@ -23,14 +23,19 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        setupNavigationBar()
         setupTableView()
         bind()
     }
     public override func viewDidAppear(_ animated: Bool) {
         coinTableView.reloadData()
     }
-    func setupTableView(){
+    
+    // MARK: - Funcoes de Inicializacao
+    func setupNavigationBar(){
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    func setupTableView() {
         coinTableView.dataSource = self
         coinTableView.delegate = self
         coinTableView.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
@@ -74,6 +79,7 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         }
     }
+    // MARK: - TableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }

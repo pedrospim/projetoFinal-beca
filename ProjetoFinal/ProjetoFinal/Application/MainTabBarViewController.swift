@@ -12,9 +12,7 @@ class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = .lightGray
-        self.tabBar.barTintColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0)
-        self.tabBar.isTranslucent = false
+        setupColors()
         let coinListViewController = CoinListViewController()
         coinListViewController.tabBarItem = UITabBarItem()
         coinListViewController.tabBarItem.image = UIImage(named: "iconMoney")
@@ -25,6 +23,12 @@ class MainTabBarViewController: UITabBarController {
         favoritesViewController.tabBarItem.title = "Adicionadas"
         let tabBarList = [coinListViewController, favoritesViewController]
         viewControllers = tabBarList
+    }
+    
+    func setupColors(){
+        self.tabBar.tintColor = .lightGray
+        self.tabBar.barTintColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0)
+        self.tabBar.isTranslucent = false
     }
 
 }

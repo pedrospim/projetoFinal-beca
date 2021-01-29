@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="botaoAddRem" destination="0yY-G1-SuE" id="sTv-rP-ALc"/>
                 <outlet property="favImage" destination="gbP-eO-ThF" id="R1i-yW-110"/>
+                <outlet property="imageBit" destination="BHt-nx-Zz5" id="1UJ-sd-yIr"/>
                 <outlet property="labelCoinNome" destination="2AX-Io-Qqf" id="yt4-2U-39d"/>
                 <outlet property="labelCoinValor" destination="9Bp-Xq-uZs" id="M8q-05-dEP"/>
                 <outlet property="labelEstrela" destination="gbP-eO-ThF" id="s8D-c9-4p6"/>

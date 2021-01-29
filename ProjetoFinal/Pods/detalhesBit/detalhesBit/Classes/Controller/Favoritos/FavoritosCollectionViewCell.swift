@@ -13,6 +13,7 @@ class FavoritosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageBit: UIImageView!
     @IBOutlet weak var idBit: UILabel!
     @IBOutlet weak var valorBit: UILabel!
+    @IBOutlet weak var viewCell: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +21,7 @@ class FavoritosCollectionViewCell: UICollectionViewCell {
     }
     
     func celulaLayout() {
-        self.layer.cornerRadius = 10
+        self.viewCell.layer.cornerRadius = 10
     }
 
 }

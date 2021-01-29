@@ -14,9 +14,6 @@ class CoinListViewModel {
     var viewData: Bindable<[CoinViewData]> = Bindable([])
     var imagens: Bindable<ImageModel> = Bindable([])
     // MARK: - Constructors
-    // init(client: FilmeAPIProtocol = FilmeAPI()) {
-    //
-    // }
     init(client:MoedaAPI = MoedaAPI()) {
         self.client = client
         self.loadCoins()
