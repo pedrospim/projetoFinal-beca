@@ -9,9 +9,10 @@ import UIKit
 import Commons
 import detalhesBit
 
-class CoinListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CoinListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     // MARK: - Outlets
     @IBOutlet weak var coinTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Variables
     let viewModel: CoinListViewModel = CoinListViewModel()
     // MARK: - Inicializacao
@@ -25,15 +26,22 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
+        setupSearchBar()
         bind()
     }
     public override func viewDidAppear(_ animated: Bool) {
         coinTableView.reloadData()
-    }
-    
+    }    
     // MARK: - Funcoes de Inicializacao
-    func setupNavigationBar(){
+    func setupNavigationBar() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    func setupSearchBar() {
+        searchBar.delegate = self
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterResults(searchText)
+        coinTableView.reloadData()
     }
     func setupTableView() {
         coinTableView.dataSource = self
@@ -71,11 +79,16 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         cell.setup(viewModel: CoinTableViewCellModel(coin: viewModel.viewData.value[indexPath.row]))
         return cell
-        }else{
+        } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath) as? LoadingCell else {
                 fatalError("The dequeued cell is not an instance of celulaMoeda.")
             }
-            cell.activityIndicator.startAnimating()
+            if viewModel.viewData.value.count < 1 {
+                cell.activityIndicator.startAnimating()
+            } else {
+                cell.activityIndicator.stopAnimating()
+                cell.activityIndicator.isHidden = true
+            }
             return cell
         }
     }
