@@ -17,7 +17,6 @@ public class FavoritosViewController: UIViewController {
     
     // MARK: - Atributos
     private var listFavorites:[String:[String:String]] = [:]
-
     // MARK: - Contructor
     
     // Favoritos precisam pegar umas lista de coins para listar corretamente

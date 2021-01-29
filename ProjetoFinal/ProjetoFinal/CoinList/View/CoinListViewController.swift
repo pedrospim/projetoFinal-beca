@@ -59,10 +59,6 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
             self.coinTableView.reloadData()
         }
     }
-    // MARK: - Status Bar
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     // MARK: - TableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
