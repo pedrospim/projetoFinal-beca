@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Commons
+
 extension CoinTableViewCell {
 
     func setupAcessibilityCell() {
