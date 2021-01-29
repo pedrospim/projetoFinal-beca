@@ -86,9 +86,11 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath) as? LoadingCell else {
                 fatalError("The dequeued cell is not an instance of celulaMoeda.")
             }
+            cell.activityIndicator.startAnimating()
+            
             if viewModel.viewData.value.count > 1 {
-                cell.activityIndicator.stopAnimating()
                 cell.activityIndicator.isHidden = true
+                cell.activityIndicator.stopAnimating()
             }
             return cell
         }
