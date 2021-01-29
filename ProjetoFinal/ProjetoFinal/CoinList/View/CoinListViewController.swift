@@ -30,22 +30,16 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
     public override func viewDidAppear(_ animated: Bool) {
         coinTableView.reloadData()
     }
-<<<<<<< HEAD
-    
+
     // MARK: - Funcoes de Inicializacao
-    func setupNavigationBar(){
+    func setupNavigationBar() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     func setupTableView() {
         coinTableView.dataSource = self
         coinTableView.delegate = self
         coinTableView.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
-=======
-    func setupTableView() {
-        coinTableView?.dataSource = self
-        coinTableView?.delegate = self
-        coinTableView?.register(UINib(nibName: "CoinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
->>>>>>> 5e5d3107e142a16bea8ca59e5d61b2f262e86037
+
         let tableViewLoadingCellNib = UINib(nibName: "LoadingCell", bundle: nil)
             coinTableView?.register(tableViewLoadingCellNib, forCellReuseIdentifier: "loadingCell")
     }
