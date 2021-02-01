@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritosViewController" customModule="detalhesBit" customModuleProvider="target">
             <connections>
                 <outlet property="collectionViewFavoritos" destination="lwX-Pl-7jh" id="xFe-JE-HXG"/>
+                <outlet property="dateLabel" destination="iha-0w-opH" id="8eQ-L0-Qa3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04 jan 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iha-0w-opH">
-                    <rect key="frame" x="143" y="138.5" width="89" height="23.5"/>
+                    <rect key="frame" x="132" y="139" width="111" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="111" id="Egr-xJ-y7A"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                     <color key="textColor" red="0.99164897200000002" green="0.99356168509999998" blue="0.92940312619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -44,7 +48,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moeda Digital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-Ys-Ffi">
-                    <rect key="frame" x="107.5" y="104" width="160" height="34.5"/>
+                    <rect key="frame" x="107.5" y="103.5" width="160" height="34.5"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                     <color key="textColor" red="0.99164897200000002" green="0.99356168509999998" blue="0.92940312619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -54,16 +58,16 @@
             <color key="backgroundColor" red="0.10196160529999999" green="0.097945399579999995" blue="0.10196136679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="oIb-Ys-Ffi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="107.5" id="Be1-fW-r44"/>
-                <constraint firstItem="iha-0w-opH" firstAttribute="top" secondItem="oIb-Ys-Ffi" secondAttribute="bottom" id="EBj-xj-Jne"/>
+                <constraint firstItem="iha-0w-opH" firstAttribute="top" secondItem="oIb-Ys-Ffi" secondAttribute="bottom" constant="1" id="EBj-xj-Jne"/>
                 <constraint firstItem="oIb-Ys-Ffi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HHP-oF-dmT"/>
                 <constraint firstAttribute="trailing" secondItem="xTl-lI-XzI" secondAttribute="trailing" id="LW5-er-YWc"/>
-                <constraint firstItem="iha-0w-opH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="143" id="M8a-qf-guY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iha-0w-opH" secondAttribute="trailing" constant="143" id="XTv-i4-zIz"/>
+                <constraint firstItem="iha-0w-opH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="132" id="M8a-qf-guY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iha-0w-opH" secondAttribute="trailing" constant="132" id="XTv-i4-zIz"/>
                 <constraint firstItem="lwX-Pl-7jh" firstAttribute="top" secondItem="xTl-lI-XzI" secondAttribute="bottom" constant="8" symbolic="YES" id="aEo-pN-48v"/>
                 <constraint firstItem="xTl-lI-XzI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="edd-V2-fnv"/>
                 <constraint firstItem="iha-0w-opH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fuS-s4-hkD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oIb-Ys-Ffi" secondAttribute="trailing" constant="107.5" id="gS2-DX-AKK"/>
-                <constraint firstItem="xTl-lI-XzI" firstAttribute="top" secondItem="iha-0w-opH" secondAttribute="bottom" constant="17" id="m6v-Ng-7da"/>
+                <constraint firstItem="xTl-lI-XzI" firstAttribute="top" secondItem="iha-0w-opH" secondAttribute="bottom" constant="16" id="m6v-Ng-7da"/>
             </constraints>
             <point key="canvasLocation" x="136.80000000000001" y="102.99850074962519"/>
         </view>

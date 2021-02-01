@@ -29,12 +29,17 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         setupNavigationBar()
         setupTableView()
         setupSearchBar()
+        setupAcessibilityView()
+        setupData()
         bind()
     }
     public override func viewDidAppear(_ animated: Bool) {
         coinTableView.reloadData()
     }
     // MARK: - Funcoes de Inicializacao
+    func setupData() {
+        self.dateLabel.text = Date().getFormattedDate(format: "dd MMM yyyy")
+    }
     func setupNavigationBar() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -83,7 +88,6 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
                 fatalError("The dequeued cell is not an instance of celulaMoeda.")
             }
             cell.activityIndicator.startAnimating()
-            
             if viewModel.viewData.value.count > 1 {
                 cell.activityIndicator.isHidden = true
                 cell.activityIndicator.stopAnimating()

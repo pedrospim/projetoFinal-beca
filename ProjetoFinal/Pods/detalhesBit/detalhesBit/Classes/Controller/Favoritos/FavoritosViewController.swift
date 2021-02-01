@@ -11,6 +11,7 @@ import Commons
 public class FavoritosViewController: UIViewController {
 
     @IBOutlet weak var collectionViewFavoritos: UICollectionView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     private let celulaFavoritosIdentifier = "celulaFavoritos"
     private var arrStrin: Array<Any> = []
@@ -34,6 +35,13 @@ public class FavoritosViewController: UIViewController {
     }
     override public func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        setupData()
+    }
+    func setupData(){
+        self.dateLabel.text = Date().getFormattedDate(format: "dd MMM yyyy")
+    }
+    func setupTableView(){
         collectionViewFavoritos.dataSource = self
         collectionViewFavoritos.delegate = self
         let nibCelula = UINib(nibName: "FavoritosCollectionViewCell", bundle: Bundle(for: FavoritosViewController.self))
@@ -41,6 +49,7 @@ public class FavoritosViewController: UIViewController {
         collectionViewFavoritos.reloadData()
     }
 }
+    
 
 extension FavoritosViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     

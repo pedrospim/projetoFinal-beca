@@ -43,5 +43,6 @@ class CoinTableViewCell: UITableViewCell {
         } else {
             coinImage.image = UIImage(named: "iconPlaceholder")
         }
+        setupAcessibilityCell()
     }
 }
