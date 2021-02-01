@@ -14,7 +14,6 @@ class CoinListViewModel {
     private var coinList:[CoinViewData] = []
     var viewData: Bindable<[CoinViewData]> = Bindable([])
     var imagens: Bindable<ImageModel> = Bindable([])
-    
     // MARK: - Constructors
     init(client:MoedaAPI = MoedaAPI()) {
         self.client = client
@@ -29,17 +28,16 @@ class CoinListViewModel {
             self.coinList = self.viewData.value
         }
     }
-    func filterResults(_ searchText:String){
+    func filterResults(_ searchText:String) {
         var listaNova = coinList
         if searchText != ""{
             listaNova = listaNova.filter({ (coin) -> Bool in
-                if coin.name.contains(searchText){
+                if coin.name.contains(searchText) {
                     return true
-                }else {
+                } else {
                     return false
                 }
             })
-            
         }
         self.viewData.value = listaNova
     }

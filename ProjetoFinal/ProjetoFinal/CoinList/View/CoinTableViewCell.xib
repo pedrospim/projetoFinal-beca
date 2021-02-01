@@ -62,6 +62,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <accessibility key="accessibilityConfiguration">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <connections>
                 <outlet property="coinImage" destination="io0-WO-vbm" id="06o-e5-dHc"/>
                 <outlet property="nameCoinLabel" destination="HYw-en-QNx" id="nUQ-cn-wKB"/>

@@ -11,7 +11,6 @@ public class Bindable<T> {
     typealias Listener = (T) -> Void
     // MARK: - Properties
     var listeners: [Listener] = []
-    
     // MARK: - Constructors
     init(_ v: T) {
         self.value = v

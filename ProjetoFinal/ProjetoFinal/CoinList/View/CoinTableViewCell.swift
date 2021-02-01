@@ -14,7 +14,7 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var shortnameCoinLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     // MARK: - Variables
-    //arrumar
+    // arrumar
     var viewModel:CoinTableViewCellModel?
     // MARK: - Inicializacao
     override func awakeFromNib() {
@@ -33,8 +33,10 @@ class CoinTableViewCell: UITableViewCell {
         priceLabel.text = data.price
         if data.isFav {
             nameCoinLabel.text = data.name + " ★"
+            nameCoinLabel.accessibilityLabel = data.name + " favoritado"
         } else {
             nameCoinLabel.text = data.name
+            nameCoinLabel.accessibilityValue = data.name
         }
         if data.idIcon != "" {
             coinImage.carregarImagem(idIcon: data.idIcon)
