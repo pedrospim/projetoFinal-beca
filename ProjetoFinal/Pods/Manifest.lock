@@ -32,7 +32,7 @@ CHECKOUT OPTIONS:
     :commit: 8fff202088ed9d572b4abf4cacc55a85eb191951
     :git: https://github.com/Lleitao1/Commons.git
   detalhesBit:
-    :commit: de6d8f8ad51c5e95cb3f1259ae4916bb66dbb677
+    :commit: 8ceb568a2f21125a81547e05fa12632119737b61
     :git: https://github.com/mathiasnonohay/moduloDetalhesBit.git
 
 SPEC CHECKSUMS:
