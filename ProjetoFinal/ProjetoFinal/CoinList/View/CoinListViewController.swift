@@ -62,9 +62,6 @@ class CoinListViewController: UIViewController, UITableViewDataSource, UITableVi
         viewModel.viewData.bind { (_) in
             self.coinTableView.reloadData()
         }
-        viewModel.imagens.bind { (_) in
-            self.coinTableView.reloadData()
-        }
     }
     // MARK: - TableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

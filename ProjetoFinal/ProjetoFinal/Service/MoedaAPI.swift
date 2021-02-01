@@ -14,16 +14,17 @@ enum HTTPResponse {
 }
 
 class MoedaAPI {
-    var listaImagens: ImageModel = []
-
     // MARK: - Get Moedas
-    func coinInfo(url: String = "https://rest-sandbox.coinapi.io/v1/assets/?apikey=6EE0C17A-1797-46A3-A62B-D9B69FC1FC9A", completion: @escaping (CoinModel) -> Void) {
+    func coinInfo(url: String = "https://rest-sandbox.coinapi.io/v1/assets/?apikey=04D7059E-2345-4BDA-B196-DED63361DC49", completion: @escaping (CoinModel) -> Void) {
         Alamofire.request(url, method: .get).responseJSON { (resposta) in
             switch resposta.result {
             case .success:
 
                 guard let jsonData = resposta.data else {return}
-                guard let coins = try? JSONDecoder().decode(CoinModel.self, from: jsonData) else {return}
+                guard let coins = try? JSONDecoder().decode(CoinModel.self, from: jsonData) else {
+                    self.alerta(message: "Bad Request -- There is something wrong with your request")
+                    return
+                    }
 
                 completion(coins)
 
@@ -59,28 +60,10 @@ class MoedaAPI {
             }
         }
     }
-    // MARK: - Get Image
-    func imageInfo(tamanho: Int, completion: @escaping (ImageModel) -> Void) {
-        let key = "04D7059E-2345-4BDA-B196-DED63361DC49"
-        Alamofire.request("https://rest-sandbox.coinapi.io/v1/assets/icons/\(tamanho)/?apikey=\(key)", method: .get).responseJSON { (resposta) in
-            switch resposta.result {
-            case .success:
-
-                guard let jsonData = resposta.data else {return}
-                guard let jsonImagem = try? JSONDecoder().decode(ImageModel.self, from: jsonData) else {return}
-
-                completion(jsonImagem)
-                // Chamar quando for colocar imagem na celula
-
-            case .failure:
-                print(resposta)
-            }
-        }
-    }
     func alerta(message:String) {
         let viewController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
         let alert = UIAlertController(title: "Alerta", message: "\(message)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Tentar novamente", style: .default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
         return self.coinInfo { (response) in
             response

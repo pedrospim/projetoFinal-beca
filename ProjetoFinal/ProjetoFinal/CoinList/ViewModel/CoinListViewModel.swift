@@ -13,7 +13,6 @@ class CoinListViewModel {
     private let client: MoedaAPI
     private var coinList:[CoinViewData] = []
     var viewData: Bindable<[CoinViewData]> = Bindable([])
-    var imagens: Bindable<ImageModel> = Bindable([])
     // MARK: - Constructors
     init(client:MoedaAPI = MoedaAPI()) {
         self.client = client
